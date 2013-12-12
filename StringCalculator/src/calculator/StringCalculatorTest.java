@@ -24,5 +24,18 @@ public class StringCalculatorTest {
 		//assert
 		assertEquals(0,result);
 	}
+	
+	@Test
+	public void JustOneNumber() //input: empty string, output:zero
+	{
+		//arrange
+		StringCalculator calculator = new StringCalculator();
+	
+		//act
+		int result= calculator.Add("1");
+		
+		//assert
+		assertEquals(1,result);
+	}
 
 }
