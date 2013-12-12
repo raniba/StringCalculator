@@ -26,7 +26,7 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void JustOneNumber() //input: empty string, output:zero
+	public void JustOneNumber() //input: just one number, output:the number
 	{
 		//arrange
 		StringCalculator calculator = new StringCalculator();
