@@ -62,5 +62,15 @@ public class StringCalculatorTest {
 		//assert
 		assertEquals(6,result);
 	}
+	
+	@Test
+	public void SupportDifferentDelimiters () //input: string with different delimiters between numbers in it, output sum
+	{
+		//act
+		int result= calculator.Add("“//;\n1;2");
+		
+		//assert
+		assertEquals(3,result);
+	}
 
 }
