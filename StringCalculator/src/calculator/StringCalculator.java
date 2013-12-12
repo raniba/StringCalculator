@@ -6,7 +6,10 @@ public class StringCalculator {
 	{
 		if(string.isEmpty())
 			return 0;
-		return Integer.parseInt(string);
+		String[] numbers = string.split(",");
+		 if(numbers.length == 1)
+			 return Integer.parseInt(string);
+		return Integer.parseInt(numbers[0])+Integer.parseInt(numbers[1]);
 	}
 
 }
