@@ -32,5 +32,15 @@ public class StringCalculatorTest {
 		//assert
 		assertEquals(1,result);
 	}
+	
+	@Test
+	public void addTwoNumbers() //input: two numbers, output:the number
+	{
+		//act
+		int result= calculator.Add("1,2");
+		
+		//assert
+		assertEquals(3,result);
+	}
 
 }
