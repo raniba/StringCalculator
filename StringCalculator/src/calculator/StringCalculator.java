@@ -14,7 +14,12 @@ public class StringCalculator {
 		String[] numbers = string.split(",");
 		 if(numbers.length == 1)
 			 return stToInt(string);
-		return stToInt(numbers[0])+stToInt(numbers[1]);
+		int sum=0;
+		for(int i=0;i<numbers.length;i++)
+		{
+			sum+=stToInt(numbers[i]);
+		}
+		return sum;
 	}
 
 }
