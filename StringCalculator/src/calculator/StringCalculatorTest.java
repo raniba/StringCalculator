@@ -6,7 +6,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class StringCalculatorTest {
-
+	//arrange
+			StringCalculator calculator = new StringCalculator();
 	@Test
 	public void test() {
 		//fail("Not yet implemented");
@@ -15,9 +16,6 @@ public class StringCalculatorTest {
 	@Test
 	public void addingEmptyStringReturns0() //input: empty string, output:zero
 	{
-		//arrange
-		StringCalculator calculator = new StringCalculator();
-	
 		//act
 		int result= calculator.Add("");
 		
@@ -28,9 +26,6 @@ public class StringCalculatorTest {
 	@Test
 	public void JustOneNumber() //input: just one number, output:the number
 	{
-		//arrange
-		StringCalculator calculator = new StringCalculator();
-	
 		//act
 		int result= calculator.Add("1");
 		
