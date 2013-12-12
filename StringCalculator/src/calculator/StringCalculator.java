@@ -13,10 +13,17 @@ public class StringCalculator {
 		for(int i=0;i<numbers.length;i++)
 		{
 			if(!numbers[i].equals(""))
+			{
 				sum+=stToInt(numbers[i]);
-		}
+				if(stToInt(numbers[i]) <0)
+					negative_numbers += numbers[i] + " ,";
+			}
+				
+		}//for
 		return sum;
 	}
+	
+	private String negative_numbers="";//saves the negative numbers
 	
 	public int Add(String string)throws Exception
 	{
@@ -34,8 +41,25 @@ public class StringCalculator {
 		}
 		
 		 if(numbers.length == 1)
-			 return stToInt(string);
-		return sumNumbers(numbers);
+		 {
+			 if(stToInt(string)<0)
+			 {
+				 negative_numbers = string;
+				 throw new Exception("negatives not allowed: " + negative_numbers);
+			 }
+			 else
+			 {
+				 return stToInt(string);
+			 }
+			 
+		 }//if(numbers.length == 1)
+		 
+		int sum= sumNumbers(numbers);
+		if(negative_numbers.equals(""))
+			return sum;
+		else
+			 throw new Exception("negatives not allowed: " + negative_numbers);
+			
 	}
 
 }

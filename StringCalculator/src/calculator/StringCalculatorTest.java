@@ -14,7 +14,7 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void addingEmptyStringReturns0() //input: empty string, output:zero
+	public void addingEmptyStringReturns0() throws Exception //input: empty string, output:zero
 	{
 		//act
 		int result= calculator.Add("");
@@ -24,7 +24,7 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void JustOneNumber() //input: just one number, output:the number
+	public void JustOneNumber() throws Exception //input: just one number, output:the number
 	{
 		//act
 		int result= calculator.Add("1");
@@ -34,7 +34,7 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void addTwoNumbers() //input: two numbers, output:the sum
+	public void addTwoNumbers() throws Exception //input: two numbers, output:the sum
 	{
 		//act
 		int result= calculator.Add("1,2");
@@ -44,7 +44,7 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void addNoLimitNumbers() //input: no limited number of numbers, output:the sum
+	public void addNoLimitNumbers() throws Exception //input: no limited number of numbers, output:the sum
 	{
 		//act
 		int result= calculator.Add("1,2,3");
@@ -54,7 +54,7 @@ public class StringCalculatorTest {
 	}
 
 	@Test
-	public void newLinesBetweenNumbers() //input: string with lines between numbers in it, output sum
+	public void newLinesBetweenNumbers() throws Exception //input: string with lines between numbers in it, output sum
 	{
 		//act
 		int result= calculator.Add("1,2\n3");
@@ -64,7 +64,7 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void SupportDifferentDelimiters () //input: string with different delimiters between numbers in it, output sum
+	public void SupportDifferentDelimiters () throws Exception //input: string with different delimiters between numbers in it, output sum
 	{
 		//act
 		int result= calculator.Add("//#\n1#2#1#1#2#3#4#5");
@@ -74,14 +74,14 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void negativeNumberException() //Calling Add with a negative number will throw an exception “negatives not allowed” - and the negative that was passed.if there are multiple negatives, show all of them in the exception message 
+	public void negativeNumberException()throws Exception //Calling Add with a negative number will throw an exception “negatives not allowed” - and the negative that was passed.if there are multiple negatives, show all of them in the exception message 
 	{
 		try
 		{
 			//act
-			int result= calculator.Add("//#\n1#2#-1#1#2#3#4#5");
+			int result= calculator.Add("//#\n1#2#-1#1#-2#-33#4#5");
 			//assert
-			assertEquals(1+2-1+1+2+3+4+5,result);
+			assertEquals(1+2-1+1-2-33+4+5,result);
 		}
 		
 		catch(Exception e)
