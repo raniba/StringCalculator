@@ -18,7 +18,7 @@ public class StringCalculator {
 		return sum;
 	}
 	
-	public int Add(String string)
+	public int Add(String string)throws Exception
 	{
 		if(string.isEmpty())
 			return 0;

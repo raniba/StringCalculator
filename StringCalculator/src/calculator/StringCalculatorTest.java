@@ -72,5 +72,23 @@ public class StringCalculatorTest {
 		//assert
 		assertEquals(1+2+1+1+2+3+4+5,result);
 	}
+	
+	@Test
+	public void negativeNumberException() //Calling Add with a negative number will throw an exception “negatives not allowed” - and the negative that was passed.if there are multiple negatives, show all of them in the exception message 
+	{
+		try
+		{
+			//act
+			int result= calculator.Add("//#\n1#2#-1#1#2#3#4#5");
+			//assert
+			assertEquals(1+2-1+1+2+3+4+5,result);
+		}
+		
+		catch(Exception e)
+		{
+			 System.out.println(e);
+		}
+		
+	}
 
 }
