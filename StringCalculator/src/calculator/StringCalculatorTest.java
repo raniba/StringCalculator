@@ -53,4 +53,14 @@ public class StringCalculatorTest {
 		assertEquals(6,result);
 	}
 
+	@Test
+	public void newLinesBetweenNumbers() //input: string with lines between numbers in it, output sum
+	{
+		//act
+		int result= calculator.Add("1,2\n3");
+		
+		//assert
+		assertEquals(6,result);
+	}
+
 }
