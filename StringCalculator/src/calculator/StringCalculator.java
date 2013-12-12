@@ -7,6 +7,16 @@ public class StringCalculator {
 		return Integer.parseInt(string);
 	}
 	
+	private int sumNumbers(String[] numbers)//sum the numbers
+	{
+		int sum=0;
+		for(int i=0;i<numbers.length;i++)
+		{
+			sum+=stToInt(numbers[i]);
+		}
+		return sum;
+	}
+	
 	public int Add(String string)
 	{
 		if(string.isEmpty())
@@ -14,12 +24,7 @@ public class StringCalculator {
 		String[] numbers = string.split(",");
 		 if(numbers.length == 1)
 			 return stToInt(string);
-		int sum=0;
-		for(int i=0;i<numbers.length;i++)
-		{
-			sum+=stToInt(numbers[i]);
-		}
-		return sum;
+		return sumNumbers(numbers);
 	}
 
 }
