@@ -34,13 +34,23 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void addTwoNumbers() //input: two numbers, output:the number
+	public void addTwoNumbers() //input: two numbers, output:the sum
 	{
 		//act
 		int result= calculator.Add("1,2");
 		
 		//assert
 		assertEquals(3,result);
+	}
+	
+	@Test
+	public void addNoLimitNumbers() //input: no limited number of numbers, output:the sum
+	{
+		//act
+		int result= calculator.Add("1,2,3");
+		
+		//assert
+		assertEquals(6,result);
 	}
 
 }
