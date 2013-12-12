@@ -67,10 +67,10 @@ public class StringCalculatorTest {
 	public void SupportDifferentDelimiters () //input: string with different delimiters between numbers in it, output sum
 	{
 		//act
-		int result= calculator.Add("“//;\n1;2");
+		int result= calculator.Add("//#\n1#2#1#1#2#3#4#5");
 		
 		//assert
-		assertEquals(3,result);
+		assertEquals(1+2+1+1+2+3+4+5,result);
 	}
 
 }

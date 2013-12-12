@@ -12,7 +12,8 @@ public class StringCalculator {
 		int sum=0;
 		for(int i=0;i<numbers.length;i++)
 		{
-			sum+=stToInt(numbers[i]);
+			if(!numbers[i].equals(""))
+				sum+=stToInt(numbers[i]);
 		}
 		return sum;
 	}
@@ -21,7 +22,17 @@ public class StringCalculator {
 	{
 		if(string.isEmpty())
 			return 0;
-		String[] numbers = string.split("[,\n]");
+		String[] numbers;
+		if(string.charAt(0) == '/' && string.charAt(1) == '/' && string.charAt(3) == '\n')
+		{
+			char delimiter = string.charAt(2);
+			numbers = string.split("[//"+delimiter+",\n]");
+		}
+		else
+		{
+			numbers = string.split("[,\n]");
+		}
+		
 		 if(numbers.length == 1)
 			 return stToInt(string);
 		return sumNumbers(numbers);
